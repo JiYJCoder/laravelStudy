@@ -3,17 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\User;
 class UserController extends Controller
 {
-    //单动作控制器指定方法：get:指定路由时，不需要指定方法，直接调用
+    //单动作控制器指定方法：get:指定路由时，不需要指定方法，自调用__invoke
 //    public function __invoke()
 //    {
-//        // TODO: Implement __invoke() method.
+//
 //    }
+    //构造函数
     public function __construct()
     {
-        $this->middleware('token');
+//        $this->middleware('token');
     }
 
     public function updata($id){
@@ -22,7 +23,8 @@ class UserController extends Controller
 
     public function show($id)
     {
-        return view('user.profile', ['user' => User::findOrFail($id)]);
+        echo $id;
+//        return view('user.profile', ['user' => user::findOrFail($id)]);
     }
 
     /**

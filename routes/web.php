@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 //Route::view('/','welcome',['website'=>"纪耀俊"]);
 Route::get('/test/{id}/t',function ($id){
-    return 'my url: ' . route('t',['id'=>1]);
+    return 'myurl: ' . route('t',['id'=>1]);
 })->name('t');
 
 //路由重定向
@@ -27,4 +27,5 @@ Route::get('/test/{id}/t',function ($id){
 //})->name('profile');
 
 Route::get('user/{id}', 'UserController@show');
+//Route::get('user/{id}', 'UserController@updata');
 
